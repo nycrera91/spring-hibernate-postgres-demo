@@ -23,6 +23,9 @@ public class QuestionController {
     @Autowired
     private QuestionRepository questionRepository;
 
+//
+//    const querystring = require('querystring');
+//    axios.get('http://localhost:8080/api/events/page', querystring.stringify({ page: 1, size: 20 }));
     @RequestMapping(value = "/questions", method = RequestMethod.GET)
     public Page<Question> getQuestions(Pageable pageable) {
         return questionRepository.findAll(pageable);
