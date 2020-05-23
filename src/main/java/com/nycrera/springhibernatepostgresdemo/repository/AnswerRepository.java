@@ -2,6 +2,7 @@ package com.nycrera.springhibernatepostgresdemo.repository;
 
 import com.nycrera.springhibernatepostgresdemo.model.Answer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * Project Name: spring-hibernate-postgres-demo
  */
 
+@Repository
 public interface AnswerRepository extends JpaRepository<Answer, Long> {
     List<Answer> findByQuestionId(Long questionId);
 }
